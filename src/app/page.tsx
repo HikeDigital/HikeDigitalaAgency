@@ -6,8 +6,6 @@ import {
   ArrowRight,
   Search,
   AlignJustify,
-  Twitter,
-  Facebook,
   Cloud,
   Chrome,
   Check,
@@ -26,6 +24,13 @@ import {
   PawPrint,
   Rat,
   Turtle,
+  MapPinned,
+  Star,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Youtube,
 } from "lucide-react";
 
 export default function Home() {
@@ -44,7 +49,7 @@ export default function Home() {
         </Link>
 
         <MaxWidthWrapper>
-          <div className="flex justify-between items-center pb-1">
+          <div className="flex justify-between items-center pb-1 xl:pb-2">
             <div className="flex space-x-2 items-center">
               <div className="h-[3.5rem] w-10 bg-black rounded-b-full flex items-center justify-center">
                 <p className="text-white font-semibold text-lg">N</p>
@@ -56,7 +61,7 @@ export default function Home() {
         </MaxWidthWrapper>
       </div>
 
-      <div className="relative mt-2 text-white">
+      <div className="relative text-white">
         <div>
           <MaxWidthWrapper className="relative w-full bg-gradient-to-b from-[#6754E9] to-[#4534B8] rounded-b-[2rem] z-20 py-10 space-y-4 md:flex md:items-center xl:h-[38rem]">
             <div className="flex flex-col space-y-4 md:flex-[1.3] xl:flex-1">
@@ -101,6 +106,7 @@ export default function Home() {
                     src="/box-1.png"
                     height={300}
                     width={227}
+                    quality={100}
                     alt="#"
                     className="row-start-1 row-span-2 rounded-[2rem]"
                   />
@@ -108,6 +114,7 @@ export default function Home() {
                     src="/box-2.png"
                     height={300}
                     width={227}
+                    quality={100}
                     alt="#"
                     className="row-start-1 rounded-[2rem]"
                   />
@@ -115,6 +122,7 @@ export default function Home() {
                     src="/box-3.png"
                     height={300}
                     width={227}
+                    quality={100}
                     alt="#"
                     className="row-start-2 rounded-[2rem]"
                   />
@@ -238,7 +246,7 @@ export default function Home() {
                     <div className="bg-[#6754E9] rounded-full p-[0.12rem]">
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
-                    <p className="font-syne text-base">
+                    <p className="font-kanit text-base">
                       Keyword and competitor research
                     </p>
                   </div>
@@ -246,7 +254,7 @@ export default function Home() {
                     <div className="bg-[#6754E9] rounded-full p-[0.12rem]">
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
-                    <p className="font-syne text-base">
+                    <p className="font-kanit text-base">
                       SKAGS (single keyword ad groups)
                     </p>
                   </div>
@@ -254,7 +262,7 @@ export default function Home() {
                     <div className="bg-[#6754E9] rounded-full p-[0.12rem]">
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
-                    <p className="font-syne text-base">
+                    <p className="font-kanit text-base">
                       Negative keyword pruning
                     </p>
                   </div>
@@ -262,13 +270,13 @@ export default function Home() {
                     <div className="bg-[#6754E9] rounded-full p-[0.12rem]">
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
-                    <p className="font-syne text-base">Ad copy optimization</p>
+                    <p className="font-kanit text-base">Ad copy optimization</p>
                   </div>
                   <div className="flex space-x-4 items-center">
                     <div className="bg-[#6754E9] rounded-full p-[0.12rem]">
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
-                    <p className="font-syne text-base">Backlink Generation</p>
+                    <p className="font-kanit text-base">Backlink Generation</p>
                   </div>
                 </div>
                 <div className="border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
@@ -780,6 +788,7 @@ export default function Home() {
                     src="/GettyImages-1436826358.jpg"
                     height={831}
                     width={450}
+                    quality={100}
                     alt="#"
                     className="row-start-1 row-span-2 rounded-[2.5rem] w-[80%]"
                   />{" "}
@@ -790,6 +799,7 @@ export default function Home() {
                     src="/GettyImages-1437209359-768x930.jpg"
                     height={450}
                     width={300}
+                    quality={100}
                     alt="#"
                     className="rounded-[2rem] w-[100%] md:w-[80%] xl:w-[90%]"
                   />{" "}
@@ -800,7 +810,7 @@ export default function Home() {
         </MaxWidthWrapper>
       </div>
 
-      <div className="relative z-30 bg-[#FFFFFF] rounded-t-[2rem] py-12 md:py-20 w-full -top-32 box-border">
+      <div className="relative z-30 bg-[#FFFFFF] rounded-t-[2rem] py-12 pb-28 md:py-40 w-full -top-32 box-border">
         <MaxWidthWrapper>
           <div className="flex flex-col space-y-8 md:space-y-0 lg:flex-row lg:space-x-6 lg:justify-between">
             <div className="flex flex-col space-y-3 justify-between lg:flex-[0.8]">
@@ -822,50 +832,458 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row md:justify-between xl:space-x-8">
-              <div className="border rounded-[2.5rem] flow-root isolate max-w-sm object-contain pb-8 md:mt-8 lg:mt-0">
-                <div className="flex flex-col space-y-3">
-                  <Image
-                    src="/milad-fakurian-58Z17lnVS4U-unsplash-Copy.jpg"
-                    height={450}
-                    width={300}
-                    alt="#"
-                    className="rounded-t-[2.5rem] aspect-[1/0.8] w-[100%]"
-                  />
-                  <div className="px-7">
-                    <p className="text-sm text-gray-500 mt-3">May 2023</p>
-                  </div>
+            <div className="flex flex-col space-y-6 items-center">
+              <div className="flex flex-col md:flex-row md:justify-between md:space-x-6 xl:space-x-8">
+                <div className="border rounded-[2.5rem] flow-root isolate max-w-sm object-contain pb-8 md:mt-8 lg:mt-0">
+                  <div className="flex flex-col space-y-3">
+                    <Image
+                      src="/milad-fakurian-58Z17lnVS4U-unsplash-Copy.jpg"
+                      height={450}
+                      width={300}
+                      quality={100}
+                      alt="#"
+                      className="rounded-t-[2.5rem] aspect-[1/0.8] w-[100%]"
+                    />
+                    <div className="px-7">
+                      <p className="text-sm text-gray-500 mt-3">May 2023</p>
+                    </div>
 
-                  <div className="px-7">
-                    <p className="font-syne font-bold text-lg">
-                      The evolution of live-stream content and short-form video:
-                      a look at the TikTok revolution
+                    <div className="px-7">
+                      <p className="font-syne font-bold text-lg">
+                        The evolution of live-stream content and short-form
+                        video: a look at the TikTok revolution
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="hidden border rounded-[2.5rem] md:flow-root isolate max-w-sm object-contain pb-8 md:mt-8 lg:mt-0">
+                  <div className="flex flex-col space-y-3">
+                    <Image
+                      src="/jurica-koletic-7YVZYZeITc8-unsplash.jpg"
+                      height={450}
+                      width={300}
+                      quality={100}
+                      alt="#"
+                      className="rounded-t-[2.5rem] aspect-[1/0.8] w-[100%]"
+                    />
+                    <div className="px-7">
+                      <p className="text-sm text-gray-500 mt-3">May 2023</p>
+                    </div>
+
+                    <div className="px-7">
+                      <p className="font-syne font-bold text-lg">
+                        The Metaverse boom: brands unite and Apple takes a rain
+                        check
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex space-x-[0.65rem] md:space-x-3 w-full justify-center">
+                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black"></div>
+                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10"></div>
+                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10"></div>
+                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10 md:hidden"></div>
+                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10 md:hidden"></div>
+                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10 md:hidden"></div>
+              </div>
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </div>
+
+      <div className="relative z-40 bg-[#6754E9] rounded-t-[2rem] py-12 md:py-24 w-full -top-48 box-border">
+        <MaxWidthWrapper>
+          <div className="flex flex-col space-y-0 text-white">
+            <div className="flex flex-col space-y-4 md:flex-row md:justify-between">
+              <div className="xl:w-[34rem] flex flex-col space-y-6  md:w-[26rem]">
+                <h1 className="font-syne font-bold text-2xl md:text-4xl xl:text-5xl">
+                  Get a Free consultation to boost your business
+                </h1>
+                <p className="font-kanit font-light text-xs md:text-sm lg:text-base">
+                  A marketing audit is an evaluation of your company&apos;s
+                  marketing efforts and their effectiveness. Here what you will
+                  get:
+                </p>
+                <div className="border-b border-white/20"></div>
+                <div className="flex space-x-4 items-start">
+                  <div className="bg-white rounded-full p-[0.12rem]">
+                    <Check className="h-4 w-4 text-[#6754E9] stroke-[3.5]" />
+                  </div>
+                  <p className="font-kanit font-light">
+                    A marketing audit is an evaluation of your company&apos;s
+                    marketing efforts and their effectiveness. Here what you
+                    will get:
+                  </p>
+                </div>
+
+                <div className="flex space-x-4 items-start">
+                  <div className="bg-white rounded-full p-[0.12rem]">
+                    <Check className="h-4 w-4 text-[#6754E9] stroke-[3.5]" />
+                  </div>
+                  <p className="font-kanit font-light">
+                    Evaluate your target audience to see if they have changed or
+                    if you need to adjust your messaging to better reach them
+                  </p>
+                </div>
+                <div className="flex space-x-4 items-start">
+                  <div className="bg-white rounded-full p-[0.12rem]">
+                    <Check className="h-4 w-4 text-[#6754E9] stroke-[3.5]" />
+                  </div>
+                  <p className="font-kanit font-light">
+                    Analyze your website to ensure it is user-friendly,
+                    mobile-responsive, and optimized for search engines.
+                  </p>
+                </div>
+                <div className="flex space-x-4 items-start">
+                  <div className="bg-white rounded-full p-[0.12rem]">
+                    <Check className="h-4 w-4 text-[#6754E9] stroke-[3.5]" />
+                  </div>
+                  <p className="font-kanit font-light">
+                    Review your content marketing efforts, including your blog
+                    posts, social media, and email marketing.
+                  </p>
+                </div>
+              </div>
+
+              {/* 2nd */}
+              <div className="flex flex-col space-y-10 md:w-[22rem] xl:w-[34rem]">
+                <div className="relative">
+                  <div className="relative bg-white rounded-[2.2rem] overflow-hidden p-6 xl:py-14 xl:px-14 mx-auto">
+                    <div className="flex flex-col space-y-8">
+                      <div className="flex flex-col space-y-6">
+                        <p className="font-syne font-bold text-xl md:text-2xl lg:text-3xl text-black">
+                          Get your free audit
+                        </p>
+                        <div className="w-full">
+                          <div className="h-1 bg-[#E9E5FF] rounded-md">
+                            <div className="h-full w-[30%] bg-[#FFBE11] rounded-s-full"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-col space-y-4">
+                        <input
+                          type="text"
+                          id="input-text-label"
+                          className="py-4 px-4 block w-full rounded-2xl text-sm border hover:border-[#6754E9] text-gray-900"
+                          placeholder="Your Name"
+                        />
+                        <input
+                          type="email"
+                          id="input-email-label"
+                          className="py-4 px-4 block w-full rounded-2xl text-sm border hover:border-[#6754E9] text-gray-900"
+                          placeholder="Email"
+                        />
+                        <Button size="xl" className="w-full rounded-2xl">
+                          Next
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute top-2 -right-[0.6rem] w-[101%] h-[101%] rounded-[2rem] bg-black -z-10"></div>
+                </div>
+
+                <div className="flex flex-col space-y-4 xl:flex-row xl:space-x-12 xl:items-center">
+                  <p className="font-kanit font-medium text-xl text-center">
+                    AWARDED MARKETING AGENCY
+                  </p>
+                  <div className="flex space-x-12 items-center justify-between">
+                    {" "}
+                    <div className="object-contain w-16">
+                      {" "}
+                      <Image
+                        src="/Clutch.png"
+                        height={160}
+                        width={148}
+                        quality={100}
+                        alt="#"
+                      />
+                    </div>
+                    <div className="object-contain w-20">
+                      {" "}
+                      <Image
+                        src="/EXPERTISE.png"
+                        height={160}
+                        width={198}
+                        quality={100}
+                        alt="#"
+                      />
+                    </div>
+                    <div className="object-contain w-16">
+                      {" "}
+                      <Image
+                        src="/badge.png"
+                        height={150}
+                        width={150}
+                        quality={100}
+                        alt="#"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="relative bg-white rounded-[2.5rem] px-5 md:px-8 xl:px-12 text-black z-10 flex flex-col xl:flex-row xl:justify-between mt-10 md:mt-20">
+                <div className="xl:flex-[1] flex flex-col space-y-1 border-b xl:border-r xl:border-b-0 border-black/10 py-5 xl:py-10">
+                  <div className="w-14 object-contain">
+                    <Image
+                      src="/jurica-koletic-7YVZYZeITc8-unsplash.jpg"
+                      height={900}
+                      width={768}
+                      quality={100}
+                      alt="#"
+                      className="rounded-full aspect-square mb-3"
+                    />
+                  </div>
+                  <p className="font-kanit font-normal text-sm md:text-lg">
+                    Talk to a growth expert
+                  </p>
+                  <p className="font-syne font-bold text-lg md:text-2xl xl:text-3xl">
+                    888-400-5050
+                  </p>
+                </div>
+
+                {/* 2nd */}
+                <div className="flex">
+                  <div className="xl:flex-[0.9] md:flex-[1] flex flex-col space-y-3 mx-auto xl:px-8 md:border-r md:border-black/10 py-5 xl:py-10">
+                    <div className="p-4 bg-[#F7F7FA] rounded-full w-fit">
+                      <MapPinned className="h-8 w-8 text-[#6754E7]" />
+                    </div>
+                    <p className="font-kanit font-light text-sm md:text-base">
+                      915 Broadway Str 501, New York, NY 10010
+                    </p>
+                    <p className="font-syne font-bold text-lg md:text-xl xl:text-xl">
+                      marketing@numerique.com
+                    </p>
+                    <div className="border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      <Link
+                        href="/"
+                        className="font-syne text-xs font-bold md:text-xs"
+                      >
+                        VIEW ON MAP
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex-[1] md:flex md:items-center md:justify-between md:space-y-1 md:mx-auto md:pl-8 md:py-5 xl:hidden">
+                    <div className="flex flex-col space-y-2">
+                      <div className="flex items-center space-x-2">
+                        <p className="font-kanit text-xs md:text-base w-28">
+                          REVIEWED ON
+                        </p>
+
+                        <div className="flex items-center space-x-1">
+                          <Star className="h-5 w-5" />
+                          <Star className="h-5 w-5" />
+                          <Star className="h-5 w-5" />
+                          <Star className="h-5 w-5" />
+                          <Star className="h-5 w-5" />
+                        </div>
+                      </div>
+
+                      <div className="flex items-center space-x-2">
+                        <p className="font-semibold text-lg md:text-2xl w-28">
+                          Clutch
+                        </p>
+
+                        <p className="font-kanit"> 4.9 Rating</p>
+                      </div>
+                    </div>
+                    <div className="w-24">
+                      <Image
+                        src="/ab-seal-vertical.svg"
+                        height={900}
+                        width={768}
+                        quality={100}
+                        alt="#"
+                        className="aspect-square mb-3"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* 3rd */}
+                <div className="flex-[1] flex justify-between items-center mx-auto xl:pl-8 py-5 xl:py-10 md:hidden xl:flex overflow-hidden">
+                  <div className="flex flex-col space-y-2">
+                    <div className="flex items-center space-x-2 xl:space-x-4">
+                      <p className="font-kanit text-xs md:text-base w-20 xl:w-28">
+                        REVIEWED ON
+                      </p>
+
+                      <div className="flex items-center space-x-1">
+                        <Star className="h-4 w-4 md:h-5md:w-5" />
+                        <Star className="h-4 w-4 md:h-5md:w-5" />
+                        <Star className="h-4 w-4 md:h-5md:w-5" />
+                        <Star className="h-4 w-4 md:h-5md:w-5" />
+                        <Star className="h-4 w-4 md:h-5md:w-5" />
+                      </div>
+                    </div>
+
+                    <div className="flex items-center space-x-2 xl:space-x-4">
+                      <p className="font-semibold text-lg md:text-2xl w-20 xl:w-28">
+                        Clutch
+                      </p>
+
+                      <p className="font-kanit text-sm md:text-base">
+                        4.9 Rating
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-24">
+                    <Image
+                      src="/ab-seal-vertical.svg"
+                      height={900}
+                      width={768}
+                      quality={100}
+                      alt="#"
+                      className="aspect-square mb-3"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="relative bg-[#F7F7FA] rounded-b-[2.5rem] mx-auto px-5 md:px-8 xl:px-12 text-black z-0 -top-20">
+                <div className="flex justify-between space-x-4 whitespace-nowrap overflow-scroll scroll-smooth md:overflow-hidden md:justify-between md:space-x-16 pt-28 pb-8">
+                  <div className="flex space-x-3 items-center">
+                    <Cloud className="h-10 w-10" />
+                    <p className="font-semibold text-sm">Google Cloud</p>
+                  </div>
+                  <div className="flex space-x-3 items-center">
+                    <Facebook className="h-10 w-10" />
+                    <p className="font-semibold text-sm">MetaBusiness</p>
+                  </div>
+                  <div className="flex space-x-3 items-center">
+                    <Chrome className="h-10 w-10" />
+                    <p className="font-semibold text-sm">Google Partner</p>
+                  </div>
+                  <div className="flex space-x-3 items-center">
+                    <Twitter className="h-10 w-10" />
+                    <p className="font-semibold text-sm">Shopify Partner</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="px-2 md:px-8 xl:px-12 flex flex-col space-y-6 md:flex-row md:space-x-12 xl:space-x-36 overflow-hidden">
+              <div className="flex flex-col space-y-7">
+                <p className="font-syne font-bold text-base md:text-base">
+                  SOLUTIONS
+                </p>
+                <div className="flex justify-between md:space-x-12 xl:space-x-36">
+                  <div className="flex flex-col space-y-2">
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Paid search marketing
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Search engine optimization
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Email marketing
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Conversion rate optimization
+                    </p>
+                  </div>
+                  <div className="flex flex-col space-y-2">
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Social Media Marketing
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Google shopping
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Influencer marketing
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Amazon shopping
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="hidden border rounded-[2.5rem] md:flow-root isolate max-w-sm object-contain pb-8 md:mt-8 lg:mt-0">
-                <div className="flex flex-col space-y-3">
-                  <Image
-                    src="/jurica-koletic-7YVZYZeITc8-unsplash.jpg"
-                    height={450}
-                    width={300}
-                    alt="#"
-                    className="rounded-t-[2.5rem] aspect-[1/0.8] w-[100%]"
-                  />
-                  <div className="px-7">
-                    <p className="text-sm text-gray-500 mt-3">May 2023</p>
+              <div className="flex justify-between md:space-x-12 xl:space-x-36">
+                <div className="flex flex-col space-y-7">
+                  <p className="font-syne font-bold text-base md:text-base">
+                    WHO WE ARE
+                  </p>
+                  <div className="flex flex-col space-y-2">
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Success Stories
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Awards
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Contact
+                    </p>
                   </div>
-
-                  <div className="px-7">
-                    <p className="font-syne font-bold text-lg">
-                      The Metaverse boom: brands unite and Apple takes a rain
-                      check
+                </div>
+                <div className="flex flex-col space-y-7">
+                  <p className="font-syne font-bold text-base md:text-base">
+                    WORK
+                  </p>
+                  <div className="flex flex-col space-y-2">
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      About Us
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Blog
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Careers
+                    </p>
+                    <p className="font-kanit text-xs md:text-base font-light text-white/80 border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
+                      Meet the Team
                     </p>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </div>
+
+      <div className="relative z-50 -top-60 bg-white py-4 md:py-8 rounded-t-[2rem] w-full box-border mt-6">
+        <MaxWidthWrapper>
+          <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center md:space-y-0">
+            <div className="hidden md:flex space-x-4">
+              <p className="font-kanit font-light text-xs">
+                &copy; 2023 Numerique
+              </p>
+              <p className="font-kanit font-light text-xs">
+                Terms & Conditions
+              </p>
+              <p className="font-kanit font-light text-xs">Privacy Policy</p>
+            </div>
+
+            <div className="flex space-x-4">
+              <div className="p-4 bg-[#F7F7FA] rounded-full">
+                <Linkedin className="h-5 w-5 text-black" />
+              </div>
+
+              <div className="p-4 bg-[#F7F7FA] rounded-full">
+                <Twitter className="h-5 w-5 text-black" />
+              </div>
+              <div className="p-4 bg-[#F7F7FA] rounded-full">
+                <Instagram className="h-5 w-5 text-black" />
+              </div>
+              <div className="p-4 bg-[#F7F7FA] rounded-full">
+                <Facebook className="h-5 w-5 text-black" />
+              </div>
+              <div className="p-4 bg-[#F7F7FA] rounded-full">
+                <Youtube className="h-5 w-5 text-black" />
+              </div>
+              
+            </div>
+            <div className="flex space-x-4 justify-center md:hidden">
+              <p className="font-kanit font-light text-xs">
+                &copy; 2023 Numerique
+              </p>
+              <p className="font-kanit font-light text-xs">
+                Terms & Conditions
+              </p>
+              <p className="font-kanit font-light text-xs">Privacy Policy</p>
             </div>
           </div>
         </MaxWidthWrapper>
@@ -876,3 +1294,10 @@ export default function Home() {
 
 // GettyImages-1436826358
 // GettyImages-1437209359-768x930
+// MapPinned
+
+// Instagram,
+// Linkedin,
+// Twitter,
+// Facebook,
+// Youtube
