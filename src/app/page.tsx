@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
@@ -5,6 +7,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import {
   ArrowRight,
   Search,
+  SearchCheck,
   AlignJustify,
   Cloud,
   Chrome,
@@ -31,9 +34,18 @@ import {
   Twitter,
   Facebook,
   Youtube,
+  ChevronDown,
+  Target,
+  MailCheck,
+  MessageSquare,
+  User,
+  X,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function Home() {
+  const [menuopen, setMenuOpen] = useState<Boolean>(false);
+
   return (
     <>
       <div className="sticky top-0 z-30 bg-white">
@@ -48,15 +60,368 @@ export default function Home() {
           <ArrowRight className="h-5 w-5 absolute right-10" />
         </Link>
 
-        <MaxWidthWrapper>
+        <MaxWidthWrapper className="relative">
           <div className="flex justify-between items-center pb-1 xl:pb-2">
             <div className="flex space-x-2 items-center">
               <div className="h-[3.5rem] w-10 bg-black rounded-b-full flex items-center justify-center">
-                <p className="text-white font-semibold text-lg">N</p>
+                <p className="text-white font-semibold text-lg">H</p>
               </div>
-              <p className="font-semibold text-lg">NUMERIQUE</p>
+              <p className="font-semibold text-lg">HIKE</p>
             </div>
-            <AlignJustify className="h-6 w-6 stroke-[3] xl:hidden" />
+            {menuopen ? (
+              <X
+                className="h-6 w-6 stroke-[3] xl:hidden"
+                onClick={() => setMenuOpen(false)}
+              />
+            ) : (
+              <AlignJustify
+                className="h-6 w-6 stroke-[3] xl:hidden"
+                onClick={() => setMenuOpen(true)}
+              />
+            )}
+
+            <div className="xl:flex space-x-4 items-center hidden">
+              <Link
+                href="/"
+                className={buttonVariants({
+                  size: "default",
+                  variant: "ghost",
+                  className:
+                    "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex",
+                })}
+              >
+                HOME
+              </Link>
+
+              <div className="flex flex-col group">
+                <Link
+                  href="/"
+                  className={buttonVariants({
+                    size: "default",
+                    variant: "ghost",
+                    className:
+                      "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex group-hover:bg-accent group-hover:text-accent-foreground",
+                  })}
+                >
+                  MARKETING SOLUTIONS
+                </Link>
+                <div className="absolute z-30 bg-[#F7F7FA] w-[89%] left-20 top-14 py-12 px-16 rounded-3xl box-border flex space-x-12 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <div className="w-[40%] border-r flex flex-col space-y-3">
+                    <div className="flex space-x-3 items-center hover:bg-white group w-[70%] transition-all rounded-xl hover:text-[#6754E7]">
+                      <div className="p-3 bg-white rounded-full">
+                        <Search className="h-4 w-4 text-[#6754E7] stroke-[3]" />
+                      </div>
+                      <p className="font-kanit text-base font-normal">
+                        Paid Search Marketing
+                      </p>
+                    </div>
+
+                    <div className="flex space-x-3 items-center hover:bg-white group w-[70%] transition-all rounded-xl hover:text-[#6754E7]">
+                      <div className="p-3 bg-white rounded-full">
+                        <Target className="h-4 w-4 text-[#6754E7] stroke-[3]" />
+                      </div>
+                      <p className="font-kanit text-base font-normal">
+                        Search Engine Optimization
+                      </p>
+                    </div>
+
+                    <div className="flex space-x-3 items-center hover:bg-white group w-[70%] transition-all rounded-xl hover:text-[#6754E7]">
+                      <div className="p-3 bg-white rounded-full">
+                        <MailCheck className="h-4 w-4 text-[#6754E7] stroke-[3]" />
+                      </div>
+                      <p className="font-kanit text-base font-normal">
+                        Email Marketing
+                      </p>
+                    </div>
+
+                    <div className="flex space-x-3 items-center hover:bg-white group w-[70%] transition-all rounded-xl hover:text-[#6754E7]">
+                      <div className="p-3 bg-white rounded-full">
+                        <Rocket className="h-4 w-4 text-[#6754E7] stroke-[3]" />
+                      </div>
+                      <p className="font-kanit text-base font-normal">
+                        Conversion Rate Optimization
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="w-[60%] flex space-x-7">
+                    <div className="flex flex-col space-y-3 px-4 flex-[1.3]">
+                      <div className="flex space-x-3 items-center hover:bg-white group pr-10 transition-all rounded-xl hover:text-[#6754E7]">
+                        <div className="p-3 bg-white rounded-full">
+                          <MessageSquare className="h-4 w-4 text-[#6754E7] stroke-[3]" />
+                        </div>
+                        <p className="font-kanit text-base font-normal">
+                          Social Media Marketing
+                        </p>
+                      </div>
+
+                      <div className="flex space-x-3 items-center hover:bg-white group pr-10 transition-all rounded-xl hover:text-[#6754E7]">
+                        <div className="p-3 bg-white rounded-full">
+                          <Target className="h-4 w-4 text-[#6754E7] stroke-[3]" />
+                        </div>
+                        <p className="font-kanit text-base font-normal">
+                          Google Shoping
+                        </p>
+                      </div>
+
+                      <div className="flex space-x-3 items-center hover:bg-white group pr-10 transition-all rounded-xl hover:text-[#6754E7]">
+                        <div className="p-3 bg-white rounded-full">
+                          <User className="h-4 w-4 text-[#6754E7] stroke-[3]" />
+                        </div>
+                        <p className="font-kanit text-base font-normal">
+                          Influencer Marketing
+                        </p>
+                      </div>
+
+                      <div className="flex space-x-3 items-center hover:bg-white group pr-10 transition-all rounded-xl hover:text-[#6754E7]">
+                        <div className="p-3 bg-white rounded-full">
+                          <Rocket className="h-4 w-4 text-[#6754E7] stroke-[3]" />
+                        </div>
+                        <p className="font-kanit text-base font-normal">
+                          Amazon Shoping
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col justify-end bg-[#E9E5FF] flex-1 rounded-3xl box-border p-5 mt-7 relative">
+                      <Image
+                        src="/target.webp"
+                        height={110}
+                        width={110}
+                        quality={100}
+                        alt="#"
+                        className="absolute -top-14 right-6"
+                      />
+
+                      <div className="flex justify-between items-center">
+                        <p className="font-kanit text-base">
+                          Explore all <br /> solutions
+                        </p>
+                        <div className="p-3 bg-black rounded-full">
+                          <ArrowRight className="h-4 w-4 text-white stroke-[3]" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col relative group">
+                <Link
+                  href="/"
+                  className={buttonVariants({
+                    size: "default",
+                    variant: "ghost",
+                    className:
+                      "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex group-hover:bg-accent group-hover:text-accent-foreground",
+                  })}
+                >
+                  WHO WE ARE
+                </Link>
+                <div className="absolute z-30 bg-[#F7F7FA] w-44 top-12 p-2 rounded-2xl box-border flex flex-col space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-t-3xl rounded-b-xl transition-all">
+                    About Us
+                  </p>
+                  <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                    Blog
+                  </p>
+                  <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                    Careers
+                  </p>
+                  <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-b-3xl rounded-t-xl transition-all">
+                    Meet the Team
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col relative group">
+                <Link
+                  href="/"
+                  className={buttonVariants({
+                    size: "default",
+                    variant: "ghost",
+                    className:
+                      "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex group-hover:bg-accent group-hover:text-accent-foreground",
+                  })}
+                >
+                  WORK
+                </Link>
+                <div className="absolute z-30 bg-[#F7F7FA] w-44 top-12 p-2 rounded-2xl box-border flex flex-col space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-t-3xl rounded-b-xl transition-all">
+                    Success Stories
+                  </p>
+                  <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-b-3xl rounded-t-xl transition-all">
+                    Awards
+                  </p>
+                </div>
+              </div>
+
+              <Link
+                href="/"
+                className={buttonVariants({
+                  size: "default",
+                  variant: "ghost",
+                  className:
+                    "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex",
+                })}
+              >
+                CONTACT
+              </Link>
+            </div>
+            <Link
+              href="/"
+              className={buttonVariants({
+                size: "default",
+                className:
+                  "rounded-[1rem] font-syne text-xs font-bold hidden xl:flex",
+              })}
+            >
+              LET&apos;S TALK
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
+          </div>
+
+          <div
+            className={`absolute left-0 z-50 bg-white py-0 w-full ${
+              menuopen ? "opacity-100 visible" : "opacity-0 invisible"
+            } border-t-[1px] xl:hidden rounded-b-3xl`}
+          >
+            {menuopen ? (
+              <div className="md:px-12 flex flex-col space-y-1">
+                <Link
+                  href="/"
+                  className={buttonVariants({
+                    size: "default",
+                    variant: "ghost",
+                    className:
+                      "rounded-[1rem] font-kanit text-xs md:text-base xl:hidden items-start justify-start py-5",
+                  })}
+                >
+                  HOME
+                </Link>
+
+                <div className="flex flex-col relative group">
+                  <Link
+                    href="/"
+                    className={buttonVariants({
+                      size: "default",
+                      variant: "ghost",
+                      className:
+                        "rounded-[1rem] font-kanit text-xs md:text-base xl:hidden flex items-start justify-start py-5",
+                    })}
+                  >
+                    Marketing Solutions
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  </Link>
+                  <div className="hidden group-hover:flex border-t-[1px]">
+                    <div className="bg-[#F7F7FA] w-full top-12 p-2 rounded-2xl box-border flex flex-col space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-t-3xl rounded-b-xl transition-all">
+                        Amazon shoping
+                      </p>
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                        Conversion rate optimization
+                      </p>
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                        Email marketing
+                      </p>
+
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                        Google shopping
+                      </p>
+
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                        Influencer marketing
+                      </p>
+
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                        Paid search marketing
+                      </p>
+
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                        Search engine optimization
+                      </p>
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                        Social media marketing
+                      </p>
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-b-3xl rounded-t-xl transition-all">
+                        Meet the Team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col relative group">
+                  <Link
+                    href="/"
+                    className={buttonVariants({
+                      size: "default",
+                      variant: "ghost",
+                      className:
+                        "rounded-[1rem] font-kanit text-xs md:text-base xl:hidden flex items-start justify-start py-5",
+                    })}
+                  >
+                    Who We Are
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  </Link>
+                  <div className="hidden group-hover:flex border-t-[1px]">
+                    <div className="bg-[#F7F7FA] w-full top-12 p-2 rounded-2xl box-border flex flex-col space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-t-3xl rounded-b-xl transition-all">
+                        About Us
+                      </p>
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                        Blog
+                      </p>
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-xl transition-all">
+                        Careers
+                      </p>
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-b-3xl rounded-t-xl transition-all">
+                        Meet the Team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col relative group">
+                  <Link
+                    href="/"
+                    className={buttonVariants({
+                      size: "default",
+                      variant: "ghost",
+                      className:
+                        "rounded-[1rem] font-kanit text-xs md:text-base xl:hidden flex items-start justify-start py-5",
+                    })}
+                  >
+                    Work
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  </Link>
+                  <div className="hidden group-hover:flex border-t-[1px]">
+                    <div className="bg-[#F7F7FA] w-full top-12 p-2 rounded-2xl box-border flex flex-col space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-t-3xl rounded-b-xl transition-all">
+                        Success Stories
+                      </p>
+
+                      <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-b-3xl rounded-t-xl transition-all">
+                        Awards
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <Link
+                href="/"
+                className={buttonVariants({
+                  size: "default",
+                  variant: "ghost",
+                  className:
+                    "rounded-b-[1.5rem] font-kanit text-xs md:text-base xl:hidden items-start justify-start py-5",
+                })}
+              >
+                Contact
+              </Link>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </MaxWidthWrapper>
       </div>
@@ -842,7 +1207,7 @@ export default function Home() {
                       width={300}
                       quality={100}
                       alt="#"
-                      className="rounded-t-[2.5rem] aspect-[1/0.8] w-[100%]"
+                      className="rounded-t-[2.5rem] aspect-[1/0.8] w-[100%] object-cover"
                     />
                     <div className="px-7">
                       <p className="text-sm text-gray-500 mt-3">May 2023</p>
@@ -865,7 +1230,7 @@ export default function Home() {
                       width={300}
                       quality={100}
                       alt="#"
-                      className="rounded-t-[2.5rem] aspect-[1/0.8] w-[100%]"
+                      className="rounded-t-[2.5rem] aspect-[1/0.8] w-[100%] object-cover"
                     />
                     <div className="px-7">
                       <p className="text-sm text-gray-500 mt-3">May 2023</p>
@@ -1274,7 +1639,6 @@ export default function Home() {
               <div className="p-4 bg-[#F7F7FA] rounded-full">
                 <Youtube className="h-5 w-5 text-black" />
               </div>
-              
             </div>
             <div className="flex space-x-4 justify-center md:hidden">
               <p className="font-kanit font-light text-xs">
