@@ -45,10 +45,12 @@ import { useState } from "react";
 
 export default function Home() {
   const [menuopen, setMenuOpen] = useState<Boolean>(false);
+  const [renderNavigation, setRenderNavigation] = useState<Number>(0);
+  const [renderCarousel, setRenderCarousel] = useState<Number>(0);
 
   return (
     <>
-      <div className="sticky top-0 z-30 bg-white">
+      <div className="sticky top-0 z-50 bg-white">
         <Link
           href="/"
           className={buttonVariants({
@@ -87,7 +89,7 @@ export default function Home() {
                   size: "default",
                   variant: "ghost",
                   className:
-                    "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex",
+                    "rounded-[1rem] font-syne text-xs font-[701] hidden xl:flex",
                 })}
               >
                 HOME
@@ -100,7 +102,7 @@ export default function Home() {
                     size: "default",
                     variant: "ghost",
                     className:
-                      "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex group-hover:bg-accent group-hover:text-accent-foreground",
+                      "rounded-[1rem] font-syne text-xs font-[701] hidden xl:flex group-hover:bg-accent group-hover:text-accent-foreground",
                   })}
                 >
                   MARKETING SOLUTIONS
@@ -213,7 +215,7 @@ export default function Home() {
                     size: "default",
                     variant: "ghost",
                     className:
-                      "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex group-hover:bg-accent group-hover:text-accent-foreground",
+                      "rounded-[1rem] font-syne text-xs font-[702] hidden xl:flex group-hover:bg-accent group-hover:text-accent-foreground",
                   })}
                 >
                   WHO WE ARE
@@ -241,7 +243,7 @@ export default function Home() {
                     size: "default",
                     variant: "ghost",
                     className:
-                      "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex group-hover:bg-accent group-hover:text-accent-foreground",
+                      "rounded-[1rem] font-syne text-xs font-[701] hidden xl:flex group-hover:bg-accent group-hover:text-accent-foreground",
                   })}
                 >
                   WORK
@@ -262,7 +264,7 @@ export default function Home() {
                   size: "default",
                   variant: "ghost",
                   className:
-                    "rounded-[1rem] font-syne text-xs font-[700] hidden xl:flex",
+                    "rounded-[1rem] font-syne text-xs font-[701] hidden xl:flex",
                 })}
               >
                 CONTACT
@@ -284,7 +286,7 @@ export default function Home() {
           <div
             className={`absolute left-0 z-50 bg-white py-0 w-full ${
               menuopen ? "opacity-100 visible" : "opacity-0 invisible"
-            } border-t-[1px] xl:hidden rounded-b-3xl`}
+            } border-t-[1px] xl:hidden rounded-b-3xl transition-all ease-in-out duration-500`}
           >
             {menuopen ? (
               <div className="md:px-12 flex flex-col space-y-1">
@@ -313,7 +315,7 @@ export default function Home() {
                     Marketing Solutions
                     <ChevronDown className="h-4 w-4 ml-2" />
                   </Link>
-                  <div className="hidden group-hover:flex border-t-[1px]">
+                  <div className="hidden group-hover:flex border-t-[1px] transition-all ease-in-out duration-1000">
                     <div className="bg-[#F7F7FA] w-full top-12 p-2 rounded-2xl box-border flex flex-col space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                       <p className="hover:bg-white hover:text-[#6754E9] py-2 px-4 font-kanit text-base rounded-t-3xl rounded-b-xl transition-all">
                         Amazon shoping
@@ -408,16 +410,16 @@ export default function Home() {
                 </div>
 
                 <Link
-                href="/"
-                className={buttonVariants({
-                  size: "default",
-                  variant: "ghost",
-                  className:
-                    "rounded-b-[1.5rem] font-kanit text-xs md:text-base xl:hidden items-start justify-start py-5",
-                })}
-              >
-                Contact
-              </Link>
+                  href="/"
+                  className={buttonVariants({
+                    size: "default",
+                    variant: "ghost",
+                    className:
+                      "rounded-b-[1.5rem] font-kanit text-xs md:text-base xl:hidden items-start justify-start py-5",
+                  })}
+                >
+                  Contact
+                </Link>
               </div>
             ) : (
               ""
@@ -561,39 +563,75 @@ export default function Home() {
         <div className="md:flex relative px-5 mx-auto md:px-0">
           <div className="text-white md:flex-[1.1] xl:flex-[1.1] md:pl-12 xl:pl-20">
             <div className="flex flex-col space-y-6 px-4 py-6 bg-black rounded-[3rem] md:pl-8 xl:pl-14 md:pr-2 md:space-y-8 md:py-12">
-              <div className="relative flex justify-between items-center mx-auto md:bg-[#6754E9] px-4 py-4 w-full rounded-full md:pl-6 md:py-3 md:pr-2 z-20">
+              <div
+                className={`relative flex justify-between items-center mx-auto ${
+                  renderNavigation === 0 ? "md:bg-[#6754E9]" : ""
+                } px-4 py-4 w-full rounded-full md:pl-6 md:py-3 md:pr-2 z-20`}
+                onClick={() => setRenderNavigation(0)}
+              >
                 <p className="font-syne font-bold text-lg leading-5 w-44">
                   Search engine optimization
                 </p>
                 <Plus className="w-7 h-7 bg-[#E9E5FF] rounded-full text-[#6754E9] md:hidden" />
-                <div className="hidden md:flex bg-black rounded-full p-3">
+                <div
+                  className={`hidden bg-black ${
+                    renderNavigation === 0 ? "md:flex" : ""
+                  } rounded-full p-3`}
+                >
                   <ArrowRight className="h-9 w-9" />
                 </div>
               </div>
-              <div className="relative flex justify-between items-center mx-auto active:bg-[#6754E9] px-4 py-4 w-full rounded-full md:pl-6 md:py-3 md:pr-2 z-20">
+              <div
+                className={`relative flex justify-between items-center mx-auto ${
+                  renderNavigation === 1 ? "md:bg-[#6754E9]" : ""
+                } px-4 py-4 w-full rounded-full md:pl-6 md:py-3 md:pr-2 z-20`}
+                onClick={() => setRenderNavigation(1)}
+              >
                 <p className="font-syne font-bold text-lg leading-5 w-44">
                   Paid search marketing
                 </p>
                 <Plus className="w-7 h-7 bg-[#E9E5FF] rounded-full text-[#6754E9] md:hidden" />
-                <div className="hidden bg-black rounded-full p-3">
+                <div
+                  className={`hidden bg-black ${
+                    renderNavigation === 1 ? "md:flex" : ""
+                  } rounded-full p-3`}
+                >
                   <ArrowRight className="h-9 w-9" />
                 </div>
               </div>
-              <div className="relative flex justify-between items-center mx-auto active:bg-[#6754E9] px-4 py-4 w-full rounded-full md:pl-6 md:py-3 md:pr-2 z-20">
+              <div
+                className={`relative flex justify-between items-center mx-auto ${
+                  renderNavigation === 2 ? "md:bg-[#6754E9]" : ""
+                } px-4 py-4 w-full rounded-full md:pl-6 md:py-3 md:pr-2 z-20`}
+                onClick={() => setRenderNavigation(2)}
+              >
                 <p className="font-syne font-bold text-lg leading-5 w-44">
                   Conversion rate optimization
                 </p>
                 <Plus className="w-7 h-7 bg-[#E9E5FF] rounded-full text-[#6754E9] md:hidden" />
-                <div className="hidden bg-black rounded-full p-3">
+                <div
+                  className={`hidden bg-black ${
+                    renderNavigation === 2 ? "md:flex" : ""
+                  } rounded-full p-3`}
+                >
                   <ArrowRight className="h-9 w-9" />
                 </div>
               </div>
-              <div className="relative flex justify-between items-center mx-auto active:bg-[#6754E9] px-4 py-4 w-full rounded-full md:pl-6 md:py-3 md:pr-2 z-20">
+              <div
+                className={`relative flex justify-between items-center mx-auto ${
+                  renderNavigation === 3 ? "md:bg-[#6754E9]" : ""
+                } px-4 py-4 w-full rounded-full md:pl-6 md:py-3 md:pr-2 z-20`}
+                onClick={() => setRenderNavigation(3)}
+              >
                 <p className="font-syne font-bold text-lg leading-5 w-44">
                   Social media marketing
                 </p>
                 <Plus className="w-7 h-7 bg-[#E9E5FF] rounded-full text-[#6754E9] md:hidden" />
-                <div className="hidden bg-black rounded-full p-3">
+                <div
+                  className={`hidden bg-black ${
+                    renderNavigation === 3 ? "md:flex" : ""
+                  } rounded-full p-3`}
+                >
                   <ArrowRight className="h-9 w-9" />
                 </div>
               </div>
@@ -603,8 +641,13 @@ export default function Home() {
             <div className="flex justify-center items-center w-full space-x-4 p-12 xl:space-x-12 xl:p-0">
               <div className="flex flex-col space-y-5 max-w-sm">
                 <p className="font-syne font-semibold text-xl">
-                  Increase your organic traffic by ranking high on search
-                  engines and AI discovery tools like ChatGPT
+                  {renderNavigation === 0
+                    ? "Increase your organic traffic by ranking high on search engines and AI discovery tools like ChatGPT"
+                    : renderNavigation === 1
+                    ? "Struggling to find PPC experts who drive long term results? Our world-class marketers would love to help your business thrive!"
+                    : renderNavigation === 2
+                    ? "Unlock your website’s full potential and boost your revenue with Numerique’s top-notch conversion rate optimization services."
+                    : "Finding the balance between staying current and relying on proven strategies is essential for staying competitive in the ever-changing landscape of marketing."}
                 </p>
                 <div className="flex flex-col space-y-2 text-gray-700">
                   <div className="flex space-x-4 items-center">
@@ -612,7 +655,13 @@ export default function Home() {
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
                     <p className="font-kanit text-base">
-                      Keyword and competitor research
+                      {renderNavigation === 0
+                        ? "Keyword and competitor research"
+                        : renderNavigation === 1
+                        ? "Keyword and competitor research"
+                        : renderNavigation === 2
+                        ? "Improve contact form completions"
+                        : "Social Media Design"}
                     </p>
                   </div>
                   <div className="flex space-x-4 items-center">
@@ -620,7 +669,13 @@ export default function Home() {
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
                     <p className="font-kanit text-base">
-                      SKAGS (single keyword ad groups)
+                      {renderNavigation === 0
+                        ? "SKAGS (single keyword ad groups)"
+                        : renderNavigation === 1
+                        ? "SKAGS (single keyword ad groups)"
+                        : renderNavigation === 2
+                        ? "Increase online orders"
+                        : "Advanced demographic targeting"}
                     </p>
                   </div>
                   <div className="flex space-x-4 items-center">
@@ -628,20 +683,42 @@ export default function Home() {
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
                     <p className="font-kanit text-base">
-                      Negative keyword pruning
+                      {renderNavigation === 0
+                        ? "Negative keyword pruning"
+                        : renderNavigation === 1
+                        ? "Negative keyword pruning"
+                        : renderNavigation === 2
+                        ? "Decrease abandoned shopping cart rates"
+                        : "Custom ad strategy"}
                     </p>
                   </div>
                   <div className="flex space-x-4 items-center">
                     <div className="bg-[#6754E9] rounded-full p-[0.12rem]">
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
-                    <p className="font-kanit text-base">Ad copy optimization</p>
+                    <p className="font-kanit text-base">
+                      {renderNavigation === 0
+                        ? "Ad copy optimization"
+                        : renderNavigation === 1
+                        ? "Ad copy optimization"
+                        : renderNavigation === 2
+                        ? "Accelerate website-generated revenue"
+                        : "Unique ad campaigns and ads"}
+                    </p>
                   </div>
                   <div className="flex space-x-4 items-center">
                     <div className="bg-[#6754E9] rounded-full p-[0.12rem]">
                       <Check className="h-4 w-4 text-white stroke-[3.5]" />
                     </div>
-                    <p className="font-kanit text-base">Backlink Generation</p>
+                    <p className="font-kanit text-base">
+                      {renderNavigation === 0
+                        ? "Backlink Generation"
+                        : renderNavigation === 1
+                        ? "Backlink Generation"
+                        : renderNavigation === 2
+                        ? "Maximize site design and conversion rates"
+                        : "Advanced demographic targeting"}
+                    </p>
                   </div>
                 </div>
                 <div className="border-b-2 pb-[0.10rem] border-[#6754E9] w-fit hover:border-[#B0A7EF] trasition-all">
@@ -653,18 +730,31 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="max-w-[15rem] bg-white px-5 py-10 rounded-3xl flex flex-col space-y-6 items-center">
+              <div className="md:hidden max-w-[15rem] bg-white px-5 py-10 rounded-3xl lg:flex flex-col space-y-6 items-center">
                 <div className="w-[11rem] h-[11rem] border rounded-full p-4 flex justify-center items-center">
                   <div className="w-[8.5rem] h-[8.5rem] border border-[#6754E9] rounded-full p-6 flex justify-center items-center">
                     <div className="flex flex-col items-center relative">
-                      <p className="font-bold font-syne text-4xl">93%</p>
+                      <p className="font-bold font-syne text-4xl">
+                        {renderNavigation === 0
+                          ? "93%"
+                          : renderNavigation === 1
+                          ? "82%"
+                          : renderNavigation === 2
+                          ? "71%"
+                          : "86%"}
+                      </p>
                       <ArrowBigUp className="h-6 w-6 text-[#6754E9] absolute top-12" />
                     </div>
                   </div>
                 </div>
                 <p className="text-center text-sm">
-                  Of customers reported that their online experience begins with
-                  search
+                  {renderNavigation === 0
+                    ? "Of customers reported that their online experience begins with search"
+                    : renderNavigation === 1
+                    ? "Of clicks on Search Ads are more likely to buy, making for better leads"
+                    : renderNavigation === 2
+                    ? "Of customers reported that they increase the contact form submissions"
+                    : "Of customers reported an increase in conversion rates through the social media marketing strategies"}
                 </p>
               </div>
             </div>
@@ -1609,7 +1699,7 @@ export default function Home() {
         </MaxWidthWrapper>
       </div>
 
-      <div className="relative z-50 -top-60 bg-white py-4 md:py-8 rounded-t-[2rem] w-full box-border mt-6">
+      <div className="relative z-50 -mt-60 bg-white py-4 md:py-8 rounded-t-[2rem] w-full box-border">
         <MaxWidthWrapper>
           <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center md:space-y-0">
             <div className="hidden md:flex space-x-4">
