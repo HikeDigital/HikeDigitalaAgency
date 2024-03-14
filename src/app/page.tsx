@@ -1746,12 +1746,3 @@ export default function Home() {
   );
 }
 
-// GettyImages-1436826358
-// GettyImages-1437209359-768x930
-// MapPinned
-
-// Instagram,
-// Linkedin,
-// Twitter,
-// Facebook,
-// Youtube

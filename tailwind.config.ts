@@ -19,6 +19,7 @@ module.exports = {
       fontFamily: {
         syne: ['var(--font-syne)'],
         kanit: ['var(--font-kanit)'],
+        suwannaphum: ['var(--font-suwannaphum)'],
       },
       colors: {
         border: "hsl(var(--border))",

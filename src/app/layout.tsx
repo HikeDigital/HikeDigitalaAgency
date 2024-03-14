@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter,Syne,Kanit } from 'next/font/google'
+import { Inter,Syne,Kanit,Suwannaphum } from 'next/font/google'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,6 +13,15 @@ const syne = Syne({
   display: 'swap',
   variable: '--font-syne',
 })
+
+const suwannaphum = Suwannaphum({
+  weight:["100", "300", "400", "700", "900",],
+  style:["normal"],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-suwannaphum',
+})
+
 
 const kanit = Kanit({
   weight:["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -36,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='light'>
-      <body className={cn('min-h-screen font-sans antialiased grainy font-',inter.className,syne.variable,kanit.variable)}>
+      <body className={cn('min-h-screen font-sans antialiased grainy font-',inter.className,syne.variable,kanit.variable,suwannaphum.variable)}>
         {children}
       </body>
     </html>
