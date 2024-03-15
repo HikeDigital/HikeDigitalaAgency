@@ -271,7 +271,7 @@ export default function Home() {
               </Link>
             </div>
             <Link
-              href="/"
+              href="/service"
               className={buttonVariants({
                 size: "default",
                 className:
@@ -1745,4 +1745,3 @@ export default function Home() {
     </>
   );
 }
-

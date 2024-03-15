@@ -1,4 +1,5 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import AutomaticCarousel from "@/components/service/AutomaticCarousel";
 import Carousel from "@/components/service/Carousel";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -267,7 +268,6 @@ const page = () => {
 
         {/* 3rd page */}
         <Carousel />
-
 
         {/* // 4th page */}
         <MaxWidthWrapper className="mt-14 md:mt-24">
@@ -1393,121 +1393,10 @@ const page = () => {
         </div>
 
         {/* // 15th page */}
-        <div className="mt-14 md:mt-24">
-          <MaxWidthWrapper>
-            <div className="max-w-xl mx-auto">
-              <p className="font-syne font-bold text-base text-center">BLOG</p>
-            </div>
+        <AutomaticCarousel />
+        
 
-            <div className="max-w-xl xl:max-w-3xl mx-auto mt-3">
-              <p className="font-syne font-bold text-2xl md:text-3xl xl:text-4xl text-center">
-                Digital marketing & industry insights
-              </p>
-            </div>
-
-            <div className="flex gap-5 items-center flex-wrap mt-6 md:mt-24 mb-10 md:mb-20 xl:mb-24">
-              <div className="relative w-[98%] md:flex-1 bg-[white] border rounded-t-3xl rounded-b-2xl">
-                <div className="pb-4 relative z-10 bg-[white] rounded-t-3xl rounded-b-2xl">
-                  <div className="bg-[#E2E2E2] w-full h-72 rounded-2xl flex justify-center items-center">
-                    <ImageIcon className="w-8 h-8" />
-                  </div>
-                  <div className="mt-3 px-5">
-                    <p className="font-syne font-bold text-base">
-                      Lorem ipsum dolor sit amet, consectetur
-                    </p>
-
-                    <p className="font-kanit font-light text-xs md:text-sm mt-2">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-                      elit,{" "}
-                    </p>
-
-                    <div className="flex justify-end items-center gap-2 mt-3">
-                      <p className="font-syne font-bold text-xs md:text-sm">
-                        READ MORE
-                      </p>
-                      <ArrowRight className="h-4 w-4" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 w-[102%] -right-[0.5rem] md:-right-[0.6rem] md:w-[102%] h-[100%] rounded-3xl bg-black -z-10"></div>
-              </div>
-
-              <div className="relative w-[98%] md:flex-1 bg-[white] border rounded-t-3xl rounded-b-2xl hidden md:flex scale-y-110">
-                <div className="pb-4 relative z-10 bg-[white] rounded-t-3xl rounded-b-2xl">
-                  <div className="bg-[#E2E2E2] w-full h-72 rounded-2xl flex justify-center items-center">
-                    <ImageIcon className="w-8 h-8" />
-                  </div>
-                  <div className="mt-3 px-5">
-                    <p className="font-syne font-bold text-base">
-                      Lorem ipsum dolor sit amet, consectetur
-                    </p>
-
-                    <p className="font-kanit font-light text-xs md:text-sm mt-2">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-                      elit,{" "}
-                    </p>
-
-                    <div className="flex justify-end items-center gap-2 mt-3">
-                      <p className="font-syne font-bold text-xs md:text-sm">
-                        READ MORE
-                      </p>
-                      <ArrowRight className="h-4 w-4" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 w-[102%] -right-[0.5rem] md:-right-[0.6rem] md:w-[102%] h-[100%] rounded-3xl bg-black -z-10"></div>
-              </div>
-
-              <div className="relative w-[98%] md:flex-1 bg-[white] border rounded-t-3xl rounded-b-2xl hidden lg:flex">
-                <div className="pb-4 relative z-10 bg-[white] rounded-t-3xl rounded-b-2xl">
-                  <div className="bg-[#E2E2E2] w-full h-72 rounded-2xl flex justify-center items-center">
-                    <ImageIcon className="w-8 h-8" />
-                  </div>
-                  <div className="mt-3 px-5">
-                    <p className="font-syne font-bold text-base">
-                      Lorem ipsum dolor sit amet, consectetur
-                    </p>
-
-                    <p className="font-kanit font-light text-xs md:text-sm mt-2">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-                      elit,{" "}
-                    </p>
-
-                    <div className="flex justify-end items-center gap-2 mt-3">
-                      <p className="font-syne font-bold text-xs md:text-sm">
-                        READ MORE
-                      </p>
-                      <ArrowRight className="h-4 w-4" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 w-[102%] -right-[0.5rem] md:-right-[0.6rem] md:w-[102%] h-[100%] rounded-3xl bg-black -z-10"></div>
-              </div>
-            </div>
-
-            <div className="flex items-center w-full relative">
-              <div className="flex space-x-[0.65rem] md:space-x-2 w-full justify-center">
-                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black"></div>
-                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10"></div>
-                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10 md:hidden xl:inline"></div>
-                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10 md:hidden"></div>
-                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10 md:hidden"></div>
-                <div className="h-[0.37rem] w-[0.37rem] rounded-full bg-black/10 md:hidden"></div>
-              </div>
-              <div className="absolute right-0 bottom-0 flex flex-col items-end space-y-[1px] pb-1 border-b-2 border-[#6754E9]">
-                <p className="font-syne font-bold text-xs whitespace-nowrap">
-                  VIEW MORE
-                </p>
-              </div>
-            </div>
-          </MaxWidthWrapper>
-        </div>
+        {/* 16th page */}
 
         <div className="mt-14 md:mt-24">
           <MaxWidthWrapper>
